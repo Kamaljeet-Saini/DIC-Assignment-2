@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5</title>
+</head>
+<body>
+    <h1>Check the Output for Question 5 in the console section</h1>
+    <script>
+         const urls = [
+            "https://jsonplaceholder.typicode.com/users",
+            "https://jsonplaceholder.typicode.com/posts",
+            "https://jsonplaceholder.typicode.com/albums",
+        ];
+
+        const getData = async function () {
+            const [users, posts, albums] = await Promise.all(
+                urls.map(async (url) => {
+                let response = await fetch(url);
+                if (response) {
+                     return response.json();
+                }
+                }),
+            );
+
+            console.log("users", users);
+            console.log("posta", posts);
+            console.log("albums", albums); 
+        };
+
+        getData();
+    </script>
+</body>
+</html>

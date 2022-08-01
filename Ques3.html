@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+</head>
+<body>
+    <h1>Creating a promise that resolves in 4 seconds using promise.resolve() and return "success"</h1>
+    <h1>Check the Output for Question 5 in the console section</h1>
+    <script>
+        Promise.resolve("Success").then(function(value) {
+            setTimeout(()=>{
+                console.log(value); // "Success"
+            },4000);
+
+        });
+    </script>
+</body>
+</html>
